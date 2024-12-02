@@ -1,0 +1,217 @@
+/* General */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Dancing Script', cursive;
+  background-color: #ffe6e6;
+  overflow: hidden;
+}
+.options {
+    position: relative; /* Para posicionar los botones dentro del contenedor */
+    height: 200px; /* Ajusta según necesites */
+  }
+  
+  #no {
+    position: relative; /* Base antes de moverse */
+    transition: transform 0.2s ease; /* Animación suave al moverse */
+  }
+  
+/* Estilo del título */
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 36px;
+    color: #ff4b4b;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+/* Corazones flotantes */
+.background span {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 182, 193, 0.8); /* Rosado suave */
+    border-radius: 50%;
+    animation: float 12s infinite linear;
+    box-shadow: 0 0 10px rgba(255, 182, 193, 0.5);
+  }
+  
+  /* Diferentes tamaños de los corazones */
+  .background span:nth-child(odd) {
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 105, 180, 0.8); /* Rosado fuerte */
+  }
+  
+  .background span:nth-child(even) {
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 228, 225, 0.8); /* Blanco rosado */
+  }
+  
+  /* Animación para que floten */
+  @keyframes float {
+    0% {
+      transform: translateY(100vh) scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-100vh) scale(0.8);
+      opacity: 0;
+    }
+  }
+
+/* Contenedor central */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Diseño del oso */
+.bear {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: #d19b7f;
+  border-radius: 50%;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.bear:hover {
+  transform: scale(1.1);
+}
+
+.ear {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #d19b7f;
+  border-radius: 50%;
+}
+
+.ear.left { top: -50px; left: -40px; }
+.ear.right { top: -50px; right: -40px; }
+
+.face {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: #fff;
+  border-radius: 50%;
+  top: 35px;
+  left: 35px;
+}
+
+.eye {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background: #000;
+  border-radius: 50%;
+  top: 65px;
+}
+
+.eye.left { left: 55px; }
+.eye.right { right: 55px; }
+
+.nose {
+  position: absolute;
+  width: 40px;
+  height: 30px;
+  background: #000;
+  border-radius: 50%;
+  top: 110px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mouth {
+  position: absolute;
+  width: 70px;
+  height: 40px;
+  border: 2px solid #000;
+  border-radius: 0 0 50px 50px;
+  top: 130px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Corazón */
+.heart {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  position: absolute;
+  width: 120px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+}
+
+.heart::before { top: -50px; left: 0; }
+.heart::after { top: 0; right: -60px; }
+
+/* Carta */
+.card {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  color: #d14d4d;
+  line-height: 1.8;
+}
+
+/* Pregunta */
+.question {
+  margin-top: 20px;
+  font-size: 32px;
+  color: #ff4b4b;
+  font-weight: bold;
+}
+
+/* Botones */
+.options .btn {
+  padding: 15px 25px;
+  margin: 10px;
+  font-size: 20px;
+  color: #fff;
+  background: linear-gradient(45deg, #ff6b6b, #ff9292);
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Dancing Script', cursive;
+}
+
+.options .btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+

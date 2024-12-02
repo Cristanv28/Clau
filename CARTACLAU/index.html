@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta de Amor</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Corazones flotantes -->
+  <div class="background">
+    <span style="left: 5%; animation-delay: 0s; animation-duration: 5s;"></span>
+    <span style="left: 20%; animation-delay: 2s; animation-duration: 9s;"></span>
+    <span style="left: 35%; animation-delay: 4s; animation-duration: 5s;"></span>
+    <span style="left: 50%; animation-delay: 6s; animation-duration: 5s;"></span>
+    <span style="left: 65%; animation-delay: 1s; animation-duration: 5s;"></span>
+    <span style="left: 80%; animation-delay: 3s; animation-duration: 7s;"></span>
+    <span style="left: 90%; animation-delay: 5s; animation-duration: 6s;"></span>
+  </div>
+
+<!-- Página inicial con el oso -->
+<div class="container" id="page-1">
+    <h1 class="title">Toca el oso para ver la carta</h1>
+    <div class="bear" id="bear">
+      <div class="ear left"></div>
+      <div class="ear right"></div>
+      <div class="face">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="nose"></div>
+        <div class="mouth"></div>
+      </div>
+      <div class="heart"></div>
+    </div>
+  </div>
+  
+
+  <!-- Carta de amor -->
+  <div class="container hidden" id="page-2">
+    <div class="card">
+      <p>Te amo con todo mi corazón y no hay nada más que desee que pasar mi tiempo a tu lado.</p>
+      <p class="question">¿Me dejas pasar tiempo a tu lado?</p>
+      <div class="options">
+        <button class="btn" id="yes">Sí</button>
+        <button class="btn" id="no">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Respuesta "Sí" -->
+  <div class="container hidden" id="page-3">
+    <div class="card">
+      <p>Desde el momento en que nuestras miradas se cruzaron, supe que había encontrado algo verdaderamente especial. Cada día que He hablo contigo se ha convertido en un hermoso capítulo de nuestra historia, y no puedo evitar imaginar un futuro lleno de risas, aventuras y amor a tu lado. Eres la razón detrás de mi sonrisa matutina y el pensamiento que me acompaña al cerrar los ojos cada noche. Tu presencia ha llenado mi vida de una calidez indescriptible, y cada instante contigo es un regalo que valoro inmensamente. Deseo compartir no solo mis alegrías, sino también mis desafíos, sabiendo que juntos podemos superar cualquier obstáculo. Mi corazón late con la esperanza de que nuestro amor siga creciendo y floreciendo con el tiempo. Me encantaría pasar mucho, mucho tiempo a tu lado, creando un sinfín de momentos mágicos y construyendo un futuro lleno de amor y felicidad a tu lado. ❤️</p>
+    </div>
+  </div>
+
+
+ <!-- Respuesta "No" -->
+ <div class="container hidden" id="page-4">
+    <div class="card">
+      <p>Onviamente si dices que no es claro que ni de chiste te voy a dejar asi que De mí no te vas a escapar Mami. Te amo. ❤️</p>
+    </div>
+  </div>
+  
+  
+
+  <script>
+    const page1 = document.getElementById('page-1');
+    const page2 = document.getElementById('page-2');
+    const page3 = document.getElementById('page-3');
+    const page4 = document.getElementById('page-4');
+
+    document.getElementById('bear').addEventListener('click', () => {
+      page1.classList.add('hidden');
+      page2.classList.remove('hidden');
+    });
+
+    document.getElementById('yes').addEventListener('click', () => {
+      page2.classList.add('hidden');
+      page3.classList.remove('hidden');
+    });
+
+    document.getElementById('no').addEventListener('click', () => {
+      page2.classList.add('hidden');
+      page4.classList.remove('hidden');
+    });
+
+  </script>
+</body>
+</html>
